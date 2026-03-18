@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Logo clave de sol y cruz plano">
+  <!-- Fondo blanco -->
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- Grupo centrado -->
+  <g id="logo" transform="translate(512,512)">
+    <!-- Cruz (centrada ligeramente a la derecha para equilibrar con la clave) -->
+    <g id="cross" transform="translate(120,-80)">
+      <!-- Brazo vertical -->
+      <rect x="-36" y="-200" width="72" height="420" rx="8" fill="#111111"/>
+      <!-- Brazo horizontal -->
+      <rect x="-180" y="-40" width="360" height="72" rx="8" fill="#111111"/>
+    </g>
+
+    <!-- Clave de sol estilizada (silueta sólida, trazos suaves) -->
+    <g id="treble" transform="translate(-90,-140) scale(1)">
+      <path d="M236 48
+               C212 48 196 80 204 106
+               C214 138 246 150 266 168
+               C288 190 280 222 256 230
+               C232 238 204 220 200 200
+               C196 180 206 156 232 150
+               C258 144 286 154 300 174
+               C320 204 312 244 284 260
+               C256 276 220 268 214 240
+               C208 210 238 192 254 176
+               C270 160 266 142 246 132
+               C226 122 248 96 236 80
+               C226 66 246 48 236 48 Z"
+            transform="translate(-220,360) scale(2.0,-2.0)"
+            fill="#111111" fill-rule="evenodd"/>
+      <!-- Punto inferior de la clave -->
+      <circle cx="220" cy="680" r="36" fill="#111111"/>
+    </g>
+  </g>
+</svg>

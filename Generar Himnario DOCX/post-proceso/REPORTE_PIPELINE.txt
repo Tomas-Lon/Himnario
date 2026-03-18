@@ -1,0 +1,19 @@
+================================================================================
+REPORTE FINAL DEL PIPELINE HIMNARIO
+================================================================================
+
+Archivos generados:
+- Himnario_Extraido.txt: OK
+- Himnario_Limpio_Final.txt: OK
+- Indice_Alfabetico_Final.txt: OK
+- REPORTE_CAMBIOS.txt: NO GENERADO
+- REPORTE_REORDENAMIENTO.txt: OK
+- Himnario_Completo_Holyrics.json: OK
+- Himnario_TabernaculoLaEsperanza_V1.docx: OK
+
+Resumen:
+Total de himnos procesados: 1176
+Total de himnos en JSON Holyrics: 395
+
+¡Pipeline ejecutado correctamente!
+================================================================================

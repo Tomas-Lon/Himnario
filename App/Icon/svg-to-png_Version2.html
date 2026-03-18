@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>SVG → PNG 1024x1024</title></head>
+<body>
+  <h3>Convierte treble_cross_flat_white.svg a PNG 1024×1024</h3>
+  <input type="file" id="file" accept=".svg">
+  <button id="download" disabled>Generar PNG 1024×1024</button>
+  <script>
+    const fileInput = document.getElementById('file');
+    const btn = document.getElementById('download');
+    let svgText = null;
+    fileInput.addEventListener('change', e => {
+      const f = e.target.files[0];
+      if (!f) return;
+      const r = new FileReader();
+      r.onload = () => { svgText = r.result; btn.disabled = false; };
+      r.readAsText(f);
+    });
+    btn.addEventListener('click', () => {
+      if (!svgText) return;
+      // Crear imagen desde SVG
+      const img = new Image();
+      const svgBlob = new Blob([svgText], {type: 'image/svg+xml;charset=utf-8'});
+      const url = URL.createObjectURL(svgBlob);
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const size = 1024;
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        // Fondo blanco
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, size, size);
+        // Dibujar la imagen escalada (mantiene proporción)
+        // Centrar dibujo
+        const scale = Math.min(size / img.width, size / img.height);
+        const w = img.width * scale, h = img.height * scale;
+        const x = (size - w) / 2, y = (size - h) / 2;
+        ctx.drawImage(img, x, y, w, h);
+        URL.revokeObjectURL(url);
+        // Descargar PNG
+        const link = document.createElement('a');
+        link.download = 'treble_cross_flat_white_1024.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      };
+      img.onerror = () => { alert('Error cargando SVG en la imagen. Comprueba el SVG.'); URL.revokeObjectURL(url); };
+      img.src = url;
+    });
+  </script>
+</body>
+</html>
